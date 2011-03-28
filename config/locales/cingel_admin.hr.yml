@@ -1,0 +1,30 @@
+hr:
+  are_you_sure: "Jeste li sigurni"
+  updates_saved: "Izmjene spremljene"
+  sign_in: Prijava
+  
+  activerecord:
+    models:
+      admin: Administrator
+    attributes:
+      admin:
+        password: "Lozinka"
+        password_confirmation: "Potvrda lozinke"
+  
+  admins:
+    admin_created: "Administrator kreiran"
+    admin_deleted: "Administrator obrisan"
+    add_admin: "Dodaj administratora"
+    admins: "Administratori"
+    delete_admin: "Obriši administratora"
+    edit_admin: "Uredi administratora"
+    new_admin: "Novi administrator"
+    
+  form:
+    cancel: "Odustani"
+    create: Kreiraj
+    help:
+      password_and_password_confirmation: "Polja 'Loznika' i 'Potvrda lozinke' potrebno je unjeti samo ako želite promjeniti lozinku. U suprotnom ostavite prazno."
+    remember_me: "Zapamti me"
+    submit: "Spremi"
+    submit_and_continue: "Spremi i nastavi uređivati"

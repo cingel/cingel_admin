@@ -1,0 +1,38 @@
+<% content_for :head do -%>
+  <script type="text/javascript">
+    Dashboard.startDate = '<%= @start_date %>';
+    Dashboard.endDate = '<%= @end_date %>';
+  </script>
+<% end -%>
+
+<% content_for :sidebar do -%>
+  <%= render :partial => "sidebar" %>
+<% end %>
+
+<% content_for :header do %>
+  <h2>Dobro došli</h2>
+<% end %>
+
+
+<div id="dashboard_wrapper">
+  
+  <div id="dashboard_loading_status"></div>
+  
+  <%= select_tag :period, options_for_period_select %>
+  
+  <div id="datepicker_wrapper">
+    <div id="datepicker_start"></div>
+    <div id="datepicker_end"></div>
+    <div id="datepicker_links">
+      <%= link_to_function "Apply", "Dashboard.getAnalyticsData('datepicker');Dashboard.datepickerWrapper.hide()" %>
+      <%= link_to_function "Cancel", "Dashboard.datepickerWrapper.hide();Dashboard.periodSelect.val('current');" %>
+    </div>
+  </div>
+  
+  <div id="chart_wrapper"></div>
+  
+  <div id="reports_wrapper">
+    <%= render :partial => "reports" %>
+  </div>
+  
+</div>

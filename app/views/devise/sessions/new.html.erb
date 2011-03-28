@@ -1,0 +1,26 @@
+<%= content_for :header do %>
+  <h2><%= t("sign_in") %></h2>
+<% end %>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <fieldset>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </fieldset>
+  
+  <% if devise_mapping.rememberable? -%>
+    <fieldset style="margin-top:15px">
+     <%= f.check_box :remember_me %>
+     <%= f.label :remember_me, t("form.remember_me"), :class => "inline_label" %>
+    </fieldset>
+   <% end -%>
+
+  <fieldset class="submit">
+    <%= f.submit t("sign_in") %>
+  </fieldset>
+<% end %>
+
+<%# render :partial => "devise/shared/links" %>

@@ -1,0 +1,179 @@
+$form_padding = 10
+
+form
+  margin: 0
+  padding: 0 #{$form_padding}px
+
+  h3
+    color: #333
+    background-color: #eee
+    border-bottom: 1px solid #ccc
+    font-size: 1.4em !important
+    line-height: 2em !important
+    margin: 20px 0 8px 0 !important
+    padding: 0 10px !important
+  
+  label
+    display: block
+    color: #333
+    font:
+      weight: normal
+      size: 11px
+    margin: 15px 0 2px 0
+    padding: 0
+    
+    &.example_label
+      margin: 0
+      color: #777
+      font:
+        weight: normal
+        size: 11px
+    
+    &.unit_label
+      margin: 0
+      padding: 0
+      display: inline
+      font:
+        weight: normal
+        size: 11px
+        
+    &.inline_label
+      margin: 0
+      padding: 0 3px 0 0
+      display: inline
+    
+  input
+  
+    &[type=text], &[type=password], &.ui-autocomplete-input
+      width: 300px
+      font-size: 1.3em
+      margin: 2px 0
+      padding: 2px
+      border: 1px solid #777
+    
+    &[type=checkbox], &[type=radio]
+      width: auto !important
+      margin-right: 5px !important
+      
+    &[type=submit]
+      width: auto !important
+      
+  select
+    margin: 5px 0 5px 0
+      
+  textarea
+    width: 99%
+    height: 100px
+    margin: 4px 0 0 0
+    font:
+      family: inherit
+      size: 1.2em
+    padding: 2px
+    border: 1px solid #777
+    
+  fieldset
+    border: none
+    margin: 0
+    padding: 0
+    clear: both
+
+    &.submit
+      margin: 20px -#{$form_padding}px
+      padding: 10px 20px
+      background-color: #ddd
+      border-top: 1px solid #aaa
+      font-size: 11px
+
+      input
+        width: auto
+        font-size: 12px
+        margin-right: 5px
+      
+    .form_column
+      float: left
+      padding: 0 40px 0 0
+      
+    .form_column_last
+      float: left
+      padding: 0
+      
+    .form_block
+      padding: 10px 0 0 0
+      
+  table.properties_table
+    border: none
+    width: auto
+    margin: 0
+    padding: 0
+    border-collapse: collapse
+    
+    tr:hover td
+      background: none
+
+    th, td
+      border: none
+      padding: 0 5px
+      font-size: 1em
+      vertical-align: middle
+
+    th   
+      text-align: right
+
+
+      &.heading
+        background-color: #eee
+        text-align: left
+        border-bottom-color: #ccc
+        font:
+          weight: bold
+          size: 1.3em
+        color: #333
+        line-height: 200%
+        padding: 0 10px
+
+    label
+      margin: 0
+      padding: 0
+
+    input
+      width: auto
+      display: block
+
+    .example_label
+      display: inline
+  
+  .form_note_box
+    width: 300px
+    margin: 5px 0
+    padding: 5px
+    border: 1px solid #ccc
+    background: #eee
+    
+    h4
+      font:
+        weight: bold
+        size: 13px
+
+form.filter_form
+  padding: 0
+  
+  input[type=text]
+    width: 150px
+
+input, textarea
+  
+  &:focus
+    background: #ffffe5
+        
+  &.loading, &.ui-autocomplete-loading
+    background:
+      image: url('/images/ajax_loader.gif')
+      repeat: no-repeat
+      position: right center
+    
+textarea.loading
+  background-position: right 10px
+                
+a.combobox-show-all-trigger
+  margin:
+    left: 5px

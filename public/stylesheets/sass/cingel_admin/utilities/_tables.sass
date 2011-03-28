@@ -1,0 +1,49 @@
+table.zebra
+  border: none
+  border-collapse: collapse
+  margin: 10px 0
+  width: 100%
+  
+  tr
+    
+    &.even-row td
+      background-color: #f6f6f6
+    
+    &:hover td
+      background-color: #e6f0f5
+      
+    th, td
+      padding: 3px 8px
+      border:
+        width: 1px
+        style: none none solid none
+      font-size: 1.2em
+      text-align: left
+      line-height: 1.5em
+      
+      &.center
+        text-align: center
+      
+      &.left
+        text-align: left
+        
+      &.right
+        text-align: right
+    
+    th
+      background-color: #eee
+      border-color: #ccc
+  
+    td
+      border-color: #eee
+      background: white
+      
+      &.money_cell
+        text-align: right
+        white-space: nowrap
+      
+      &.icon_cell
+        width: 25px
+        padding:
+          left: 0
+          right: 0

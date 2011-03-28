@@ -1,0 +1,119 @@
+#dashboard_wrapper
+  position: relative
+  
+  #datepicker_wrapper
+    position: absolute
+    z-index: 10000
+    top: 20px
+    left: 0
+    background: white
+    padding: 2px
+    border: 1px solid #ccc
+    display: none
+    
+    #datepicker_start, #datepicker_end
+      float: left
+      
+    #datepicker_start
+      margin:
+        right: 2px
+      
+    #datepicker_links
+      clear: both
+      text:
+        align: center
+      height: 35px
+      padding: 0 0 0 148px
+      
+      a
+        background: #f0f7fd
+        border: 1px solid #d6e5f1
+        padding: 5px
+        margin: 8px 8px 0 0
+        text:
+          decoration: none
+        color: #6c99ba
+        font-size: 11px
+        display: block
+        float: left
+        
+        &:hover
+          border:
+            color: #6c99ba
+      
+  #dashboard_loading_status
+    font:
+      size: 11px
+    float: right
+    
+
+#reports_wrapper
+  
+  table
+    float: left
+    width: 45%
+    margin:
+      top: 20px
+    border-collapse: collapse
+        
+    tr:hover
+    
+      td
+        background: #eee
+    
+    th
+      :border
+        :bottom 1px solid #ccc
+      :font
+        :size 12px
+        :weight bold
+      :line-height 2em
+      :padding 0 5px
+      :margin 0 0 10px 0
+      :color #333
+      text:
+        align: left
+        
+      &.metrics
+        font:
+          weight: normal
+          size: 11px
+        text:
+          align: right
+        
+    td
+      font-size: 11px
+      padding: 2px 5px
+      line-height: 13px
+      
+      &.value
+        text: 
+          align: right
+      
+      
+  
+.hits-and-visitors
+  margin: 0 0 0 20px
+  
+  .hits-and-visitors-box
+    margin: 20px
+    float: left
+    
+    h3
+      color: #333
+      text-align: center
+      font:
+        weight: bold
+        size: 12px
+        
+    p
+      text-align: center
+      color: #999
+      font-size: 11px
+      margin: 5px 0
+      
+      span
+        color: #333
+        margin: 4px auto
+        display: block
+        font-size: 20px

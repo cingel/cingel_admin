@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t("sign_in") %></title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <%= csrf_meta_tag %>
+  <%= render :partial => "cingel_admin/shared/css_assets" %>
+  <%= render :partial => "cingel_admin/shared/js_assets" %>
+  <%= yield :head %>
+</head>
+<body>
+<div id="main_wrapper">
+  
+  <%= render_flash_messages %>
+  
+  <table id="content_table">
+		<tr>
+			<td id="content_wrapper">
+			  <% if content_for?(:header) %>
+			    <div id="content_header" class="header">
+			      <%= yield :header %>
+  			  </div>
+			  <% end %>
+				<div id="content" class="section">
+					<%= yield %>
+				</div>
+			</td>
+			<% if content_for?(:sidebar) %>
+				<td id="sidebar" class="aside">
+				  <%= yield :sidebar %>
+				</td>
+			<% end -%>
+		</tr>
+	</table>
+	
+	<div id="footer" class="section">
+    &copy; <%= Date.today.year %>
+  </div>
+
+</div>
+</body>
+</html>

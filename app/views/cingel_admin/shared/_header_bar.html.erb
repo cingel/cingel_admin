@@ -1,0 +1,6 @@
+<% if defined?(current_admin) and current_admin %>
+  <div id="header_admin_bar">
+    <%= current_admin.email %> |
+    <%= link_to "Odjava", destroy_admin_session_path %>
+  </div>
+<% end %>

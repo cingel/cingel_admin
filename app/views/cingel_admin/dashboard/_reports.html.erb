@@ -1,0 +1,83 @@
+<div class="hits-and-visitors">
+  <div class="hits-and-visitors-box">
+    <h3>Visitors</h3>
+    <p><span><%= number_with_delimiter total_visitors %></span>  <%= visits_per_visitor %> visits per visitor</p>
+  </div>
+  <div class="hits-and-visitors-box">
+    <h3>Visits</h3>
+    <p><span><%= number_with_delimiter total_visits %></span> <%= visits_per_day %> visits per day</p>
+  </div>
+  <div class="hits-and-visitors-box">
+    <h3>Pageviews</h3>
+    <p>
+      <span><%= number_with_delimiter total_pageviews %></span>
+      <%= pages_per_visit %> pages per visit
+    </p>
+  </div>
+</div>
+
+<div style="clear:both"></div>
+
+<table style="margin-right:5%">
+  <tr>
+    <th>Referring Sites</th>
+    <th class="metrics">visits</th>
+  </tr>
+  <% if @referring_sites %>
+    <% for point in @referring_sites.points %>
+      <tr>
+        <td><%= point.dimensions.first[:source] %></td>
+        <td class="value"><%= number_with_delimiter point.metrics.first[:visits] %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<table>
+  <tr>
+    <th>Keywords</th>
+    <th class="metrics">visits</th>
+  </tr>
+  <% if @keywords %>
+    <% for point in @keywords.points %>
+      <tr>
+        <td><%= point.dimensions.first[:keyword] %></td>
+        <td class="value"><%= number_with_delimiter point.metrics.first[:visits] %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<div style="clear:both"></div>
+
+<table style="margin-right:5%">
+  <tr>
+    <th>Countries</th>
+    <th class="metrics">% visits</th>
+  </tr>
+  <% if @countries %>
+    <% for point in @countries.points %>
+      <tr>
+        <td><%= point.dimensions.first[:country] %></td>
+        <td class="value"><%= number_with_precision visits_percentage(point.metrics.first[:visits]), :precision => 2 %> %</td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<table>
+  <tr>
+    <th>Traffic Overview</th>
+    <th class="metrics">visits</th>
+  </tr>
+  <% if @traffic_overview %>
+    <% for point in @traffic_overview.points %>
+      <tr>
+        <td><%= point.dimensions.first[:medium] %></td>
+        <td class="value"><%= number_with_delimiter point.metrics.first[:visits] %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<div style="clear:both"></div>
