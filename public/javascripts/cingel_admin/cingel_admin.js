@@ -2,6 +2,7 @@
 $(function() {
   CingelAdmin.observeFlashMessages();
   CingelAdmin.observeAjaxErrors();
+  CingelAdmin.observeAjaxPagination();
   CingelAdmin.focusOnLoad();
 });
 
@@ -40,6 +41,15 @@ CingelAdmin.observeFlashMessages = function() {
       flash.delay(3000).fadeOut("fast");
     }
   }
+};
+
+// Ajax pagination (https://github.com/mislav/will_paginate/wiki/Ajax-pagination)
+CingelAdmin.observeAjaxPagination = function() {
+  $('.ajax_pagination a').live('click', function (){
+    $(this).parents('.ajax_pagination').append('<img src="/images/cingel_admin/loader.gif" />');
+    $.getScript(this.href);  
+  	return false;
+  });
 };
 
 // Focus first field with focus_on_load class

@@ -72,4 +72,10 @@ module CingelAdmin::BaseHelper
     image_tag("help/#{src}", :class => "help_img")
   end
   
+  def ajax_will_paginate(collection = nil, options = {})
+    options[:class] ||= "pagination"
+    options[:class] << " ajax_pagination" 
+    will_paginate(collection, options)
+  end
+  
 end
